@@ -53,6 +53,7 @@ function Blogs({ params }: PageProps) {
 
     return (
         <div className='w-full h-[100vh] px-5'>
+            
             <div>
                 <button
                 className='flex justify-center items-center text-[1.2rem] underline font-semibold hover:cursor-pointer mb-5'
