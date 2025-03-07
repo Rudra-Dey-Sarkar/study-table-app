@@ -12,18 +12,21 @@ function Footer() {
         <p>© Copyright 2025 Studytable</p>
       </div>
 
-      {/*Notice Social and Blogs Buttons*/}
+      {/*Notice, Social and Blogs Buttons*/}
       <div className='grid sm:flex gap-y-5 sm:gap-x-25'>
         {/* Notice Board Button */}
-        <button
-          className='flex items-center gap-x-2 font-[600] bg-white w-fit h-fit text-[1.4rem] py-1 px-4 hover:cursor-pointer'
-        ><PinIcon /> Notice Board</button>
+        <Link
+          href="/notice-board"
+          className='flex items-center gap-x-2 font-[600] bg-white w-fit h-fit text-[1.4rem] py-1 px-4 hover:cursor-pointer'>
+          <PinIcon /> Notice Board</Link>
 
         {/* Social buttons */}
         <div className='text-[#EDEDED]'>
           <p className='text-[1.4rem] font-[600]'>Socials</p>
 
-          <button className='flex gap-x-1 hover:cursor-pointer hover:underline'>
+          <Link
+          href="https://www.instagram.com/rudra_dey_sarkar/?hl=en" 
+          className='flex gap-x-1 hover:cursor-pointer hover:underline'>
             <svg
               width={24}
               height={24}
@@ -36,9 +39,11 @@ function Footer() {
               />
             </svg>
             Instagram
-          </button>
+          </Link>
 
-          <button className='flex gap-x-1 hover:cursor-pointer hover:underline'>
+          <Link 
+          href="https://wa.me/9475204453"
+          className='flex gap-x-1 hover:cursor-pointer hover:underline'>
             <svg
               width={24}
               height={24}
@@ -51,7 +56,7 @@ function Footer() {
               />
             </svg>
             What’s App
-          </button>
+          </Link>
         </div>
 
         {/* Blogs buttons */}
