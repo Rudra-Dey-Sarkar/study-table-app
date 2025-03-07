@@ -1,29 +1,47 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
+import toast from 'react-hot-toast';
+import ApplyPopUp from '../ApplyPopUp/ApplyPopUp';
 
 function TextImageSection() {
     const [isMobile, setIsMobile] = useState<boolean>(false);
+    const [isApply, setIsApply] = useState<boolean>(false);
+
     useEffect(() => {
 
-            // Function to update state
-            const controlResize = () => {
-                if (window.innerWidth < 640) {
-                    setIsMobile(true);
-                } else {
-                    setIsMobile(false);
-                }
-            };
-            controlResize();
-        
-            // Add event listener
-            window.addEventListener("resize", controlResize);
-            return () => window.removeEventListener("resize", controlResize);
+        // Function to update state
+        const controlResize = () => {
+            if (window.innerWidth < 640) {
+                setIsMobile(true);
+            } else {
+                setIsMobile(false);
+            }
+        };
+        controlResize();
+
+        // Add event listener
+        window.addEventListener("resize", controlResize);
+        return () => window.removeEventListener("resize", controlResize);
 
     }, []);
 
     return (
         <div className='grid gap-20'>
+
+            {/* Apply confirmation pop-up for admission */}
+            {isApply === true &&
+                <div
+                    className='flex fixed inset-0 justify-center items-center bg-black/50 z-50'
+                    onClick={() => setIsApply(false)}>
+                    <div
+                        className='bg-white p-5 rounded-md shadow-lg'
+                        onClick={(e) => e.stopPropagation()}>
+                        <ApplyPopUp setIsApply={setIsApply} />
+                    </div>
+                </div>
+            }
+
             {/* Optimize your performance */}
             <div className='grid sm:flex justify-between '>
                 {/* Texts and Buttons*/}
@@ -41,7 +59,9 @@ function TextImageSection() {
                     {/* Apply and sign-in buttons */}
                     <div className="max-w-fit flex gap-5 sm:pt-5">
                         {/* Apply for admission button */}
-                        <button className="bg-[#212121] text-white py-2 px-7 rounded-[5px] hover:cursor-pointer">
+                        <button
+                            className="bg-[#212121] text-white py-2 px-7 rounded-[5px] hover:cursor-pointer"
+                            onClick={() => setIsApply(true)}>
                             Apply for admission
                         </button>
                         {/* Sign-in button */}
