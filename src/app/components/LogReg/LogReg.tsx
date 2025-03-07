@@ -17,7 +17,7 @@ function LogReg() {
 
     return (
 
-        <div className='grid w-[100vw] h-[100vh] justify-center items-center'>
+        <div className='grid w-full h-[100vh] justify-center items-center'>
             <div className='grid gap-y-5'>
                 <p className='flex gap-x-1 font-semibold'>
                     Go Back To

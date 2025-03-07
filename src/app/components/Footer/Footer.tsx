@@ -1,5 +1,6 @@
 "use client"
 import { PinIcon } from 'lucide-react'
+import Link from 'next/link'
 import React from 'react'
 
 function Footer() {
@@ -58,10 +59,10 @@ function Footer() {
           <p className='text-[1.4rem] font-[600]'>Blogs</p>
 
           <div className='grid justify-start'>
-            <button className=' w-fit hover:cursor-pointer hover:underline'>How we plan learning session ?</button>
-            <button className=' w-fit hover:cursor-pointer hover:underline'>How we plan assessment session ?</button>
-            <button className=' w-fit hover:cursor-pointer hover:underline'>How we manage student life ?</button>
-            <button className=' w-fit hover:cursor-pointer hover:underline'>The effective student</button>
+            <Link href="blogs/Tell-the-ways-we-can-plan-learning-sessions" className=' w-fit hover:cursor-pointer hover:underline'>How we plan learning session ?</Link>
+            <Link href="blogs/Tell-the-ways-we-can-plan-assessment-sessions" className=' w-fit hover:cursor-pointer hover:underline'>How we plan assessment session ?</Link>
+            <Link href="blogs/Tell-the-ways-we-can-manage-student-life" className=' w-fit hover:cursor-pointer hover:underline'>How we manage student life ?</Link>
+            <Link href="blogs/Tell-the-ways-to-Become-effective-student" className=' w-fit hover:cursor-pointer hover:underline'>The effective student</Link>
           </div>
         </div>
       </div>
