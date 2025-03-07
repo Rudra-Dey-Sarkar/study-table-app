@@ -25,8 +25,9 @@ function Footer() {
           <p className='text-[1.4rem] font-[600]'>Socials</p>
 
           <Link
-          href="https://www.instagram.com/rudra_dey_sarkar/?hl=en" 
-          className='flex gap-x-1 hover:cursor-pointer hover:underline'>
+            href="https://www.instagram.com/rudra_dey_sarkar/?hl=en"
+            target='_blank'
+            className='flex gap-x-1 hover:cursor-pointer hover:underline'>
             <svg
               width={24}
               height={24}
@@ -41,9 +42,10 @@ function Footer() {
             Instagram
           </Link>
 
-          <Link 
-          href="https://wa.me/9475204453"
-          className='flex gap-x-1 hover:cursor-pointer hover:underline'>
+          <Link
+            href="https://wa.me/9475204453"
+            target='_blank'
+            className='flex gap-x-1 hover:cursor-pointer hover:underline'>
             <svg
               width={24}
               height={24}
