@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import toast from 'react-hot-toast';
 import ApplyPopUp from '../ApplyPopUp/ApplyPopUp';
+import Link from 'next/link';
 
 function TextImageSection() {
     const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -65,9 +66,11 @@ function TextImageSection() {
                             Apply for admission
                         </button>
                         {/* Sign-in button */}
-                        <button className="flex items-center border-b-1 border-gray-700 hover:cursor-pointer">
+                        <Link
+                            href="/log-reg"
+                            className="flex items-center border-b-1 border-gray-700 hover:cursor-pointer">
                             Sign In <ArrowRight size={19} />
-                        </button>
+                        </Link>
                     </div>
                 </div>
 

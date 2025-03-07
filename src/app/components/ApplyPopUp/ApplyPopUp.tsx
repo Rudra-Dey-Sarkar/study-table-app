@@ -5,7 +5,6 @@ import toast from 'react-hot-toast'
 function ApplyPopUp({ setIsApply }: { setIsApply: React.Dispatch<React.SetStateAction<boolean>> }) {
     return (
         <div>
-            
             <p className='text-[1.2rem] font-semibold text-center my-5'>Are you sure you want to apply for admission ?</p>
 
             <div className='flex justify-center gap-x-10'>
