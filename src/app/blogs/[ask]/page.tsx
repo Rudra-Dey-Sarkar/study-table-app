@@ -15,7 +15,7 @@ async function AI(prompt: string, setPromptData: React.Dispatch<React.SetStateAc
     const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_AI_KEY!);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    const result = await model.generateContent(prompt + " withing 250 words");
+    const result = await model.generateContent(prompt + "response withing 250 words");
     setPromptData(result.response.text());
 }
 
@@ -53,20 +53,24 @@ function Blogs({ params }: PageProps) {
 
     return (
         <div className='w-full h-[100vh] px-5'>
-            
+
             <div>
                 <button
-                className='flex justify-center items-center text-[1.2rem] underline font-semibold hover:cursor-pointer mb-5'
-                onClick={()=>router.back()}>  <ArrowLeft size={19} /> Back</button>
+                    className='flex justify-center items-center text-[1.2rem] underline font-semibold hover:cursor-pointer mb-5'
+                    onClick={() => router.back()}>  <ArrowLeft size={19} /> Back</button>
             </div>
+
             {promptData !== null ?
                 <div>
                     <p className='font-bold text-[2rem]'>{FormatePrompt(pathname)} ?</p>
                     <p>{promptData}</p>
                 </div>
                 :
-                <div className='w-full h-full flex justify-center items-start'>
-                    <p className='text-[1.4rem] font-semibold pt-[25vh]'>AI is writing the Blog...</p>
+                <div>
+                    <div>
+                        <p className='font-bold text-[2rem]'>{FormatePrompt(pathname)} ?</p>
+                        <p className='text-[1.4rem] text-gray-500 font-semibold text-center pt-[5vh]'>AI 🤖 is writing ✍🏼 the Blog...</p>
+                    </div>
                 </div>
             }
         </div>
